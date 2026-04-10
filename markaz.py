@@ -45,9 +45,11 @@ data = json.load(f)
 
 
 #                    7
-# for branch in data['branches']:
-#     for students in branch['students']:
-#         if students['course'] == 'Python':
-#             print(branch['name'])
+for branch in data['branches']:
+    for teachers in branch['teachers']:
+        if teachers['subject'] != 'Python':
+            break
+    else:
+        print(branch['name'])
 
 f.close()
